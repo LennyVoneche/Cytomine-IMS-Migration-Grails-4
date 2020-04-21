@@ -155,8 +155,8 @@ cytomine.ims.server.core.url = "http://localhost-core"
 //TODO: Migration
 //cytomine.ims.server.publicKey = " "
 //cytomine.ims.server.privateKey = " "
-cytomine.ims.server.publicKey = "21362ae7-273a-4d34-b4d0-68589be2d8bf"
-cytomine.ims.server.privateKey = "4e97c2c2-eacc-455d-91a7-55d06b60e9bb"
+cytomine.ims.server.publicKey = "e040548b-a684-4d7e-9aec-3860d1189b88"
+cytomine.ims.server.privateKey = "753b1839-c54a-4925-a890-b3bb88ab38f6"
 cytomine.ims.path.buffer = "/tmp/uploaded"
 cytomine.ims.path.storage = "/data/images"
 
