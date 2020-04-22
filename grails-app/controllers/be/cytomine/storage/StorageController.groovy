@@ -57,27 +57,16 @@ class StorageController {
             if (params.idStorage) params.storage = params.idStorage
             if (params.idProject) params.projects = params.idProject
 
-
-
             String coreURL = params.core
             String ISPublicKey = Holders.config.cytomine.ims.server.publicKey
             String ISPrivateKey = Holders.config.cytomine.ims.server.privateKey
-            println "ISPublicKey : $ISPublicKey"
-            println "ISPrivateKey : $ISPrivateKey"
-
-
 
             log.info "Upload is made on Cytomine = $coreURL with image server $ISPublicKey/$ISPrivateKey key pair"
             CytomineConnection imsConnection = Cytomine.connection(coreURL, ISPublicKey, ISPrivateKey, true)
-            println "imsConnection : $imsConnection"
 
             // Check user authentication
             def authorization = cytomineService.getAuthorizationFromRequest(request)
-            println "authorization : $authorization"
-            println "authorization.publicKey : $authorization.publicKey"
             def messageToSign = cytomineService.getMessageToSignFromRequest(request)
-            println "messageToSign : $messageToSign"
-
             def keys = Cytomine.getInstance().getKeys(authorization.publicKey)
             log.info keys.getAttr().toString()
             if (!keys)

@@ -83,7 +83,18 @@ dependencies {
     testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:3.14.0"
     testRuntime "org.seleniumhq.selenium:selenium-firefox-driver:3.14.0"
 
-//    TODO: Migration
+    testCompile "org.grails:grails-test-mixins:3.3.0"
+
+    compile files('lib/commons-io-2.6.jar')
+    compile files('lib/commons-lang3-3.7.jar')
+    compile files('lib/dotslideBuildTool.jar')
+    compile files('lib/pixelmed.jar')
+    compile files('lib/openslide.jar')
+    compile files('lib/sis-base-18.09.0.jar')
+    compile files('lib/sis-jhdf5-19.04.0.jar')
+
+    compile 'org.grails:grails-plugin-filters:3.0.12'
+    compile group: 'org.codehaus.gpars', name: 'gpars', version: '1.2.1'
     compile 'be.cytomine.client:cytomine-java-client:2.1.0'
     compile 'com.vividsolutions:jts:1.13'
     compile 'net.imagej:ij:1.51h'
@@ -94,19 +105,8 @@ dependencies {
         exclude group: 'slf4j-api', module: 'c3p0'
     }
     compile ('org.grails.plugins:quartz:2.0.13')
-    compile files('lib/commons-io-2.6.jar')
-    compile files('lib/commons-lang3-3.7.jar')
-    compile files('lib/dotslideBuildTool.jar')
-    compile files('lib/pixelmed.jar')
-    compile files('lib/openslide.jar')
-    compile files('lib/sis-base-18.09.0.jar')
-    compile files('lib/sis-jhdf5-19.04.0.jar')
-//    TODO: Migration (ne sert à rien)
-//    compile files('lib/dotslideTool.jar')
-    compile 'org.grails:grails-plugin-filters:3.0.12'
-    compile group: 'org.codehaus.gpars', name: 'gpars', version: '1.2.1'
-    testCompile "org.grails:grails-test-mixins:3.3.0"
 
+//    compile 'org.grails.plugins:external-config:1.4.0'
 }
 
 bootRun {

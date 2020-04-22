@@ -1,27 +1,8 @@
-//    TODO: Migration
 //image manipulation executable
 cytomine.vips = "vips"
 cytomine.tiffinfo = "tiffinfo"
 cytomine.identify = "identify"
 cytomine.vipsthumbnail = "vipsthumbnail"
-
-//    TODO: Migration
-/*
- * Copyright (c) 2009-2019. Authors: see NOTICE file.
- *
- * Licensed under the GNU Lesser General Public License, Version 2.1 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      https://www.gnu.org/licenses/lgpl-2.1.txt
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 
 /******************************************************************************
  * EXTERNAL configuration
@@ -88,7 +69,6 @@ grails.exceptionresolver.params.exclude = ['password']
 // configure auto-caching of queries by default (if false you can cache individual queries with 'cache: true')
 grails.hibernate.cache.queries = false
 
-//TODO: Migration
 environments {
     development {
         grails.logging.jul.usebridge = "true"
@@ -99,64 +79,18 @@ environments {
         grails.serverURL = "http://image.cytomine.be"
     }
 }
-//log4j = {
-//    // Example of changing the log pattern for the default console appender:
-//    //
-//    //appenders {
-//    //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-//    //}
-//
-//    error 'org.codehaus.groovy.grails.web.servlet',        // controllers
-//            'org.codehaus.groovy.grails.web.pages',          // GSP
-//            'org.codehaus.groovy.grails.web.sitemesh',       // layouts
-//            'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
-//            'org.codehaus.groovy.grails.web.mapping',        // URL mapping
-//            'org.codehaus.groovy.grails.commons',            // core / classloading
-//            'org.codehaus.groovy.grails.plugins',            // plugins
-//            'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
-//            'org.springframework',
-//            'org.hibernate',
-//            'net.sf.ehcache.hibernate'
-//
-//
-//    environments {
-//        production {
-//            root {
-//                info 'appLog', "logfile"
-////               error  'mail'
-//                additivity = true
-//            }
-//        }
-//        development {
-//            root {
-//                info 'appLog', "logfile", 'stdout'
-//                additivity = true
-//            }
-//        }
-//        test {
-//            root {
-//                info 'appLog', "logfile", 'stdout'
-//                additivity = true
-//            }
-//        }
-//        perf {
-//            root {
-//                info 'appLog', "logfile", 'stdout'
-//                additivity = true
-//            }
-//        }
-//    }
-//}
 
 cytomine.ims.charset = "UTF-8"
 
 cytomine.ims.server.url = "http://localhost-ims"
 cytomine.ims.server.core.url = "http://localhost-core"
+
 //TODO: Migration
-//cytomine.ims.server.publicKey = " "
-//cytomine.ims.server.privateKey = " "
+//cytomine.ims.server.publicKey = ""
+//cytomine.ims.server.privateKey = ""
 cytomine.ims.server.publicKey = "e040548b-a684-4d7e-9aec-3860d1189b88"
 cytomine.ims.server.privateKey = "753b1839-c54a-4925-a890-b3bb88ab38f6"
+
 cytomine.ims.path.buffer = "/tmp/uploaded"
 cytomine.ims.path.storage = "/data/images"
 
@@ -197,22 +131,6 @@ cytomine.ims.upload.nThreadsPool = 10
 //grails.plugins.restapidoc.basePath = cytomine.ims.server.url
 //grails.plugins.restapidoc.grailsDomainDefaultType = "int"
 
-//    TODO: Migration
-/*
- * Copyright (c) 2009-2018. Authors: see NOTICE file.
- *
- * Licensed under the GNU Lesser General Public License, Version 2.1 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      https://www.gnu.org/licenses/lgpl-2.1.txt
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
 dataSource {
     pooled = true
@@ -277,91 +195,5 @@ environments {
                 validationQuery="SELECT 1"
             }
         }
-    }
-}
-
-//TODO: Migration
-/*
- * Copyright (c) 2009-2018. Authors: see NOTICE file.
- *
- * Licensed under the GNU Lesser General Public License, Version 2.1 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      https://www.gnu.org/licenses/lgpl-2.1.txt
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-/*
-You can find all detailed parameter usage from
-http://code.google.com/p/javamelody/wiki/UserGuide#6._Optional_parameters
-Any parameter with 'javamelody.' prefix configured in this file will be add as init-param of java melody MonitoringFilter.
- */
-
-
-
-
-/*
-The parameter disabled (false by default) just disables the monitoring.
- */
-javamelody.disabled = true
-
-/*
-The parameter system-actions-enabled (true by default) enables some system actions.
- */
-//javamelody.'system-actions-enabled' = true
-
-javamelody.'http-transform-pattern' = '\\d+'  //filter out numbers from URI
-
-/*
-Turn on Grails Service monitoring by adding 'spring' in displayed-counters parameter.
- */
-javamelody.'displayed-counters' = 'http,sql,error,log,spring,jsp'
-
-
-
-
-/*
-The parameter url-exclude-pattern is a regular expression to exclude some urls from monitoring as written above.
- */
-//javamelody.'url-exclude-pattern' = '/static/.*'
-
-
-
-/*
-Specify jndi name of datasource to monitor in production environment
- */
-/*environments {
-    production {
-        javamelody.datasources = 'java:comp/env/myapp/mydatasource'
-    }
-}*/
-
-//TODO: Migration
-
-/*
- * Copyright (c) 2009-2018. Authors: see NOTICE file.
- *
- * Licensed under the GNU Lesser General Public License, Version 2.1 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      https://www.gnu.org/licenses/lgpl-2.1.txt
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-modules = {
-    application {
-        resource url:'js/application.js'
     }
 }

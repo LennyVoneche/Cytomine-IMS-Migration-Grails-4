@@ -18,22 +18,17 @@ class DeleteImageFileJob {
         String cytomineUrl = Holders.config.cytomine.ims.server.core.url
         String pubKey = Holders.config.cytomine.ims.server.publicKey
         String privKey = Holders.config.cytomine.ims.server.privateKey
-        println "cytomineUrl : $cytomineUrl"
-        println "pubKey : $pubKey"
-        println "privKey : $privKey"
 
         CytomineConnection imsConn = Cytomine.connection(cytomineUrl, pubKey, privKey, true)
-        println "privKey : $imsConn"
 
         long timeMargin = Holders.config.cytomine.ims.deleteJob.frequency * 1000 * 2
-        println "timeMargin : $timeMargin"
 
         //max between frequency*2 and 48h
         timeMargin = Math.max(timeMargin, 172800000L)
         Collection<DeleteCommand> commands = new Collection<DeleteCommand>(DeleteCommand.class, 0, 0)
         commands.addParams("domain", "uploadedFile")
         commands.addParams("after", (new Date().time - timeMargin).toString())
-//         commands = commands.fetch()
+        commands = commands.fetch()
 
         for (int i = 0; i < commands.size(); i++) {
             DeleteCommand command = (DeleteCommand) commands.list.get(i)
