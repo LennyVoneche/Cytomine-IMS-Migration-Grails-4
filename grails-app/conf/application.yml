@@ -33,11 +33,6 @@ spring:
 management:
     endpoints:
         enabled-by-default: false
-
----
-server:
-    port: 9080
-
 ---
 grails:
     mime:

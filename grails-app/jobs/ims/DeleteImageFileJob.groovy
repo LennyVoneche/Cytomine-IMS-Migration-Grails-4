@@ -19,6 +19,7 @@ class DeleteImageFileJob {
         String pubKey = Holders.config.cytomine.ims.server.publicKey
         String privKey = Holders.config.cytomine.ims.server.privateKey
 
+
         CytomineConnection imsConn = Cytomine.connection(cytomineUrl, pubKey, privKey, true)
 
         long timeMargin = Holders.config.cytomine.ims.deleteJob.frequency * 1000 * 2

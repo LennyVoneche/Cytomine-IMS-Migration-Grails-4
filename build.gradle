@@ -33,16 +33,7 @@ configurations {
         extendsFrom developmentOnly
     }
 }
-//buildscript {
-//    dependencies {
-//        classpath 'org.grails.plugins:quartz:2.0.13' // Needed to compile *Job classes
-//    }
-//}
-//
-//dependencies {
-//    compile 'org.grails.plugins:quartz:2.0.13'
-//    compile 'org.quartz-scheduler:quartz:2.2.1' // Is not pulled in by default?
-//}
+
 dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     compile "org.springframework.boot:spring-boot-starter-logging"

@@ -73,13 +73,13 @@ environments {
     development {
         grails.logging.jul.usebridge = "true"
         grails.serverURL = "http://localhost:9080"
+        server.port = 9080
     }
     production {
         grails.logging.jul.usebridge = false
         grails.serverURL = "http://image.cytomine.be"
     }
 }
-
 cytomine.ims.charset = "UTF-8"
 
 cytomine.ims.server.url = "http://localhost-ims"
@@ -88,8 +88,8 @@ cytomine.ims.server.core.url = "http://localhost-core"
 //TODO: Migration
 //cytomine.ims.server.publicKey = ""
 //cytomine.ims.server.privateKey = ""
-cytomine.ims.server.publicKey = "e040548b-a684-4d7e-9aec-3860d1189b88"
-cytomine.ims.server.privateKey = "753b1839-c54a-4925-a890-b3bb88ab38f6"
+cytomine.ims.server.publicKey = "bd49317e-da66-41e7-ab03-f4de656c4b5d"
+cytomine.ims.server.privateKey = "2459fd25-ed0f-4ea2-98bc-e54b41e035bf"
 
 cytomine.ims.path.buffer = "/tmp/uploaded"
 cytomine.ims.path.storage = "/data/images"
