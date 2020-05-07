@@ -96,8 +96,8 @@ dependencies {
         exclude group: 'slf4j-api', module: 'c3p0'
     }
     compile ('org.grails.plugins:quartz:2.0.13')
+    compile group: 'org.grails.plugins', name: 'external-config', version: '2.0.0'
 
-//    compile 'org.grails.plugins:external-config:1.4.0'
 }
 
 bootRun {
